@@ -1,0 +1,51 @@
+@import "mixins"
+
+\:host
+  display: block
+
+.card
+  &__wrapper
+    overflow: hidden
+    position: relative
+    border-radius: 16px
+    border: 1px solid $c-blue-dark
+    background-color: white
+    padding: 40px 0 40px 40px
+    height: 300px
+    z-index: -2
+
+  &__btn
+    background: $c-blue-light
+    border-radius: 8px
+    padding: 12px
+    position: absolute
+    left: 40px
+    bottom: 40px
+
+  &__title
+    @include adaptive-font(32, 24)
+    color: $c-text-100
+    font-weight: 600
+    line-height: 40px
+
+  &__text
+    @include text-16-24
+    color: $c-text-56
+
+  &__img
+    position: absolute
+    width: 16vw
+    max-width: 255px
+    min-width: 169px
+    right: 0
+    bottom: 0
+    z-index: -1
+
+  &__info
+    @include exclude-mobile
+      display: flex
+      flex-direction: column
+      row-gap: 14px
+      height: 126px
+      width: 274px
+

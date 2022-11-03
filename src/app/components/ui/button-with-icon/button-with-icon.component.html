@@ -1,0 +1,14 @@
+<button
+  class="btn"
+  type="button"
+  [class.btn__white]="theme==='WHITE'"
+  [class.btn__default]="theme==='DEFAULT'"
+  [class.btn__grey]="theme==='GREY'"
+  (click)="submit.emit()"
+>
+  <app-svg-icon
+    [name]="icon"
+  ></app-svg-icon>
+
+  <p class="btn__text">{{text}}</p>
+</button>

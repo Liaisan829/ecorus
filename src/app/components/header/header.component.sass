@@ -1,0 +1,55 @@
+@import mixins
+
+\:host
+  display: block
+  border-bottom: 1px solid $c-light-grey
+
+.header
+
+  &__container
+    @include main_content
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    padding-top: 31px
+
+  &__navigation
+    display: flex
+    column-gap: 3vw
+
+  &__navigation:first-child
+    @include tablet
+      padding-bottom: 31px
+
+  &__link
+    color: $c-text-64
+    @include text-16-20
+    font-weight: 400
+    letter-spacing: -0.15px
+
+    &__active
+      padding-bottom: 30px
+      border-bottom: 3px solid $c-green
+      color: $c-text-100
+
+  &__auth
+    display: flex
+    column-gap: 1.87vw
+
+.navigation
+  display: flex
+  column-gap: 1.5vw
+
+.open__menu
+  @include exclude-tablet
+    display: none
+
+
+.container
+  @include tablet
+    width: 100%
+    padding: 0
+
+.navigation, .header__auth
+  @include tablet
+    display: none

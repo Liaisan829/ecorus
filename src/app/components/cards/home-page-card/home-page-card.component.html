@@ -1,0 +1,18 @@
+<div class='card__wrapper'>
+
+  <div class='card__info'>
+    <h3 class='card__title'>{{title}}</h3>
+    <p class='card__text'>{{subtitle}}</p>
+  </div>
+
+  <img class='card__img'
+       [src]='img'
+       alt='card'>
+
+  <a [routerLink]='link' class='link'>
+    <button class='card__btn'>
+      <app-svg-icon name='buttonArrow'></app-svg-icon>
+    </button>
+  </a>
+</div>
+

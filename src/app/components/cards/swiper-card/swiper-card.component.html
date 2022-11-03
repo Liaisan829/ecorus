@@ -1,0 +1,18 @@
+<div class='card'
+     [class.card__green]='back_color === "GREEN"'
+     [class.card__yellow]='back_color === "YELLOW"'
+     [class.card__blue]='back_color === "BLUE"'>
+  <div class='card__info'>
+    <h1 class='card__title'>{{title}}</h1>
+    <p class='card__text'>{{subtitle}}</p>
+    <a [routerLink]='link'>
+      <button class='card__btn'>
+        {{btn}}
+      </button>
+    </a>
+  </div>
+
+  <img class='slide__img'
+       [src]='img'
+       alt='makeWorldClean'>
+</div>

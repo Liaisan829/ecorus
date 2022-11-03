@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
+    "svg": "node ../ecorus/generate-svgs.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -19,6 +20,8 @@
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
     "rxjs": "~7.5.0",
+    "svgstore": "^3.0.1",
+    "swiper": "^8.4.4",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
