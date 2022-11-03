@@ -1,0 +1,50 @@
+<header class="header">
+  <div class="header__container">
+    <div class="header__navigation">
+      <a routerLink="/">
+        <img src="/assets/svg/logo.svg" alt="logo">
+      </a>
+      <nav class="navigation">
+        <a
+          routerLink="/"
+          routerLinkActive="header__link__active"
+          [routerLinkActiveOptions]="{exact: true}"
+          class="header__link"
+        >Главная</a>
+
+        <a
+          routerLink="/"
+          routerLinkActive="header__link__active"
+          class="header__link"
+        >Пункты сбора</a>
+
+        <a
+          routerLink="/"
+          routerLinkActive="header__link__active"
+          class="header__link"
+        >ЭкоМаркет</a>
+
+        <a
+          routerLink="/"
+          routerLinkActive="header__link__active"
+          class="header__link"
+        >О сервисе</a>
+      </nav>
+    </div>
+    <div class="header__auth">
+      <app-button-with-icon
+        text="Казань"
+        icon="location"
+      ></app-button-with-icon>
+
+    <ng-container>
+      <app-button-with-icon
+        text="Войти"
+        icon="goIn"
+      ></app-button-with-icon>
+    </ng-container>
+
+    </div>
+
+  </div>
+</header>
