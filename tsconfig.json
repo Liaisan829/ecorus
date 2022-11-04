@@ -21,7 +21,42 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "strictBindCallApply": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "paths": {
+      "@components/*": [
+        "./src/app/components/*"
+      ],
+      "@containers/*": [
+        "./src/app/containers/*"
+      ],
+      "@directives/*": [
+        "./src/app/directives/*"
+      ],
+      "@guards/*": [
+        "./src/app/guards/*"
+      ],
+      "@models/*": [
+        "./src/app/models/*"
+      ],
+      "@pages/*": [
+        "./src/app/pages/*"
+      ],
+      "@pipes/*": [
+        "./src/app/pipes/*"
+      ],
+      "@services/*": [
+        "./src/app/services/*"
+      ],
+      "@utils/*": [
+        "./src/app/utils/*"
+      ],
+      "@environments/*": [
+        "./src/environments/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
