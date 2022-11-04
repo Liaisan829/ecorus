@@ -1,0 +1,29 @@
+@import mixins
+
+main
+  @include main_content
+  margin: 40px auto
+  @include mini-tablet
+    width: 100%
+    margin: 0 auto
+
+
+.cards
+  display: flex
+  justify-content: space-between
+  column-gap: 40px
+  margin-top: 40px
+
+  & > *
+    flex: 1
+
+  @include mini-tablet
+    flex-direction: column
+    width: 91vw
+    row-gap: 24px
+    position: relative
+    z-index: 2
+    margin: 0 auto
+    top: -116px
+
+

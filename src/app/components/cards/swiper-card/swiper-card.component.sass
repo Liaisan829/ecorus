@@ -1,0 +1,65 @@
+@import "mixins"
+
+\:host
+  display: block
+
+.card
+  display: flex
+  justify-content: space-between
+  align-items: center
+  height: 320px
+  @include mini-tablet
+    border: none
+    flex-direction: column
+    row-gap: 0
+    height: 425px
+
+  &__green
+    background: $c-light-green
+
+  &__blue
+    background: $c-swiper-blue
+
+  &__yellow
+    background: $c-yellow
+
+  &__info
+    margin-left: 64px
+    @include mini-tablet
+      margin: 0
+      padding: 24px 16px 0 16px
+
+  &__img
+    border-radius: 24px
+    width: 35vw
+    @include mini-tablet
+      width: 100%
+      height: auto
+
+  &__title
+    margin: 0
+    @include adaptive-font(48, 24)
+    font-weight: 700
+    @include tablet
+      line-height: 28px
+
+  &__text
+    line-height: 24px
+    font-weight: 400
+    margin-top: 16px
+    margin-bottom: 0
+    padding: 0
+
+  &__btn
+    margin-top: 40px
+    padding: 12px 24px
+    border-radius: 8px
+    color: $c-white
+    background-color: $c-green
+    @include mini-tablet
+      width: 100%
+      @include text-16-24
+      letter-spacing: -0.25px
+      margin-top: 24px
+
+

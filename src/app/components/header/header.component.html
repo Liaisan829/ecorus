@@ -1,4 +1,4 @@
-<header class="header">
+<header>
   <div class="header__container">
     <div class="header__navigation">
       <a routerLink="/">
@@ -13,19 +13,19 @@
         >Главная</a>
 
         <a
-          routerLink="/"
+          routerLink="/collection-points"
           routerLinkActive="header__link__active"
           class="header__link"
         >Пункты сбора</a>
 
         <a
-          routerLink="/"
+          routerLink="/ecomarket"
           routerLinkActive="header__link__active"
           class="header__link"
         >ЭкоМаркет</a>
 
         <a
-          routerLink="/"
+          routerLink="/about-service"
           routerLinkActive="header__link__active"
           class="header__link"
         >О сервисе</a>
@@ -43,8 +43,13 @@
         icon="goIn"
       ></app-button-with-icon>
     </ng-container>
-
     </div>
+
+    <button class='open__menu'
+            (click)='openMenu()'>
+      <app-svg-icon name='menu'></app-svg-icon>
+    </button>
+
 
   </div>
 </header>

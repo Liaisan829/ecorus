@@ -1,0 +1,21 @@
+@import mixins
+
+\:host
+  border-top: 1px solid $c-light-grey
+
+.footer
+
+  &__container
+    @include main_content
+    padding: 21px 0
+
+  &__content
+    display: flex
+    column-gap: 31px
+    @include mobile
+      flex-direction: column
+      row-gap: 14px
+
+
+
+
