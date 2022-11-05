@@ -8,6 +8,6 @@ import {ChangeDetectionStrategy, Component} from '@angular/core';
 })
 export class CollectionPointsComponent {
   arrMaterials = ['Стекло', 'Бумага', 'Металл']
-  arrShops = ['H&M', 'P&B', 'Adidas']
+  arrShops = ['H&M', 'P&B', 'Adidas', 'H&M', 'P&B', 'Adidas', 'H&M', 'P&B', 'Adidas']
 
 }

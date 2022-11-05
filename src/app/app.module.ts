@@ -19,6 +19,8 @@ import {MapComponent} from '@components/map/map.component';
 import { InputWithIconComponent } from './components/ui/input-with-icon/input-with-icon.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { SelectComponent } from './components/ui/select/select.component';
+import { CheckboxComponent } from './components/ui/checkbox/checkbox.component';
+import { CheckboxGroupComponent } from './components/ui/checkbox-group/checkbox-group.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { SelectComponent } from './components/ui/select/select.component';
     CollectionPointsComponent,
     MapComponent,
     InputWithIconComponent,
-    SelectComponent
+    SelectComponent,
+    CheckboxComponent,
+    CheckboxGroupComponent
   ],
   imports: [
     BrowserModule,

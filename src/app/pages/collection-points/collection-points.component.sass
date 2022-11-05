@@ -10,7 +10,6 @@
     margin: 16px auto
     width: 91vw
 
-
 .search
   display: flex
   flex-direction: row
@@ -19,9 +18,16 @@
   @include tablet
     column-gap: 16px
 
-.filter
-  flex-grow: 1
-  min-width: 280px
+  &__input
+    flex: 1
+    min-width: 280px
+    max-width: 600px
+
+  &__select
+    flex: 1
+    max-width: 280px
+    @include tablet
+      display: none
 
 .checkboxes
   max-width: 280px

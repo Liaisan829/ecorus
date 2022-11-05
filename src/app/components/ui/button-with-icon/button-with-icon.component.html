@@ -10,5 +10,5 @@
     [name]="icon"
   ></app-svg-icon>
 
-  <p class="btn__text">{{text}}</p>
+  <p *ngIf="text" class="btn__text">{{text}}</p>
 </button>

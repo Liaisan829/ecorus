@@ -1,22 +1,19 @@
 <div class='dropdown'>
   <button class='dropdown__button'
           (click)='setShow()'>
-    {{selectedOption}}
+    <p>Выбрано {{optionsList.length}} {{itemName}}</p>
   </button>
-  <app-button-with-icon (submit)='setShow()'>
-    <app-svg-icon class='dropdown__icon'
-                  name='arrow-down'
-    ></app-svg-icon>
-  </app-button-with-icon>
+  <app-button-with-icon
+    class='dropdown__icon'
+    (submit)='setShow()'
+    [icon]="icon"
+  ></app-button-with-icon>
 </div>
 
 <div class='options__wrapper'>
   <div class='options'
        *ngIf='show'>
-    <ul>
-      <li *ngFor='let item of optionsList'
-          (click)='onChange(item)'>{{item}}</li>
-    </ul>
+    <app-checkbox-group [hasSelectAll]="true" [arrCheckboxesTitles]="optionsList"></app-checkbox-group>
   </div>
 </div>
 

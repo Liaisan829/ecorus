@@ -1,0 +1,13 @@
+<label class='wrapper'>
+  <input type='checkbox'
+         (click)='onClick()'>
+  <div class='checkbox'
+       [class.checkbox__active]='value'>
+    <ng-container *ngIf='value'>
+      <app-svg-icon name='checkbox'
+                    size='20px'></app-svg-icon>
+    </ng-container>
+  </div>
+  <p class='text' [class.text__active]='value'>{{title}}</p>
+</label>
+

@@ -9,7 +9,8 @@ import {ControlValueAccessor} from "@angular/forms";
 })
 export class SelectComponent implements ControlValueAccessor {
   @Input() optionsList: Array<string> = [];
-  @Input() selectedOption: string = ''
+  @Input() itemName!: string
+  @Input() icon!: string
   show: boolean = false
   value: string = '';
 
@@ -36,7 +37,6 @@ export class SelectComponent implements ControlValueAccessor {
 
   onChange(value: string): void {
     this.value = value
-    this.selectedOption = value;
     this.show = false;
     this.onChangeCallback(value)
     this.onTouchedCallback();

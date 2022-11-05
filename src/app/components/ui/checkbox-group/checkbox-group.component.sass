@@ -1,0 +1,63 @@
+@import "mixins"
+
+\:host
+  display: block
+
+.checkboxes
+  &__wrapper
+    display: flex
+    flex-direction: column
+    row-gap: 14px
+    max-height: 157px
+    overflow: hidden
+    @include tablet
+      row-gap: 12px
+
+.form
+  display: flex
+  flex-direction: column
+  @include tablet
+    display: flex
+    flex-direction: column
+    row-gap: 13px
+    margin-top: 13px
+
+.many-checkboxes
+  &__wrapper
+    overflow-y: scroll
+    scrollbar-color: rgba($c-blue, 0.24) transparent
+    scrollbar-width: thin
+    scrollbar-height: 48px
+
+    &::-webkit-scrollbar
+      height: 48px
+      width: 4px
+
+    &::-webkit-scrollbar-track
+      background-color: transparent
+
+    &::-webkit-scrollbar-thumb
+      border-radius: 4px
+      background: rgba($c-blue, 0.24)
+
+
+.shadow
+  height: 12px
+  width: 100%
+  top: 12px
+  background-color: transparent
+  position: relative
+  @include exclude-tablet
+    background: linear-gradient(180deg, rgba(black, 0.08) 0%, rgba(black, 0) 100%)
+  @include tablet
+    display: none
+
+.separator
+  width: 100%
+  margin-top: 11px
+  @include tablet
+    display: none
+
+h3
+  @include text-16
+  color: $c-text-88

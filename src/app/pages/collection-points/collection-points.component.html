@@ -4,20 +4,23 @@
   <main class="wrapper">
     <div class="search">
       <app-input-with-icon
-        class="filter"
+        class="search__input"
         icon="search"
         placeholder="Поиск"
       ></app-input-with-icon>
 
       <app-select
-        class=""
+        class="search__select"
         [optionsList]="arrShops"
-        selectedOption="Выберите магазин"
+        itemName="магазина"
+        icon="arrow-down"
       ></app-select>
 
       <app-select
+        class="search__select"
         [optionsList]="arrMaterials"
-        selectedOption="Выберите материал"
+        itemName="материала"
+        icon="arrow-down"
       ></app-select>
     </div>
   </main>
