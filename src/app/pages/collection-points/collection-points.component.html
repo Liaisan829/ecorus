@@ -1,0 +1,24 @@
+<app-baselayout [hasFooter]="false">
+  <app-map></app-map>
+
+  <main class="wrapper">
+    <div class="search">
+      <app-input-with-icon
+        class="filter"
+        icon="search"
+        placeholder="Поиск"
+      ></app-input-with-icon>
+
+      <app-select
+        class=""
+        [optionsList]="arrShops"
+        selectedOption="Выберите магазин"
+      ></app-select>
+
+      <app-select
+        [optionsList]="arrMaterials"
+        selectedOption="Выберите материал"
+      ></app-select>
+    </div>
+  </main>
+</app-baselayout>

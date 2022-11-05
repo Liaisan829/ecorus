@@ -1,0 +1,29 @@
+@import "mixins"
+
+\:host
+  display: block
+
+.wrapper
+  background: $c-white
+  padding: 16px
+  border-radius: 8px
+  box-shadow: 0 2px 8px rgb(#152D67FF, 0.12)
+  @include tablet
+    padding: 14px
+
+.input
+  @include text-14-20
+  width: 100%
+
+  &::placeholder
+    color: $c-text-40
+
+  &__wrapper
+    display: flex
+    align-items: center
+    column-gap: 8px
+    @include text-14-20
+
+    &::placeholder
+     color: $c-text-40
+

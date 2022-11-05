@@ -13,7 +13,12 @@ import {ButtonWithIconComponent} from '@components/ui/button-with-icon/button-wi
 import {HomePageCardComponent} from '@components/cards/home-page-card/home-page-card.component';
 import {SwiperModule} from "swiper/angular";
 import {SwiperComponent} from '@components/swiper/swiper.component';
-import { SwiperCardComponent } from './components/cards/swiper-card/swiper-card.component';
+import {SwiperCardComponent} from '@components/cards/swiper-card/swiper-card.component';
+import {CollectionPointsComponent} from '@pages/collection-points/collection-points.component';
+import {MapComponent} from '@components/map/map.component';
+import { InputWithIconComponent } from './components/ui/input-with-icon/input-with-icon.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { SelectComponent } from './components/ui/select/select.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +32,17 @@ import { SwiperCardComponent } from './components/cards/swiper-card/swiper-card.
     ButtonWithIconComponent,
     HomePageCardComponent,
     SwiperComponent,
-    SwiperCardComponent
+    SwiperCardComponent,
+    CollectionPointsComponent,
+    MapComponent,
+    InputWithIconComponent,
+    SelectComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SwiperModule
+    SwiperModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
