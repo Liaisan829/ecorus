@@ -17,6 +17,8 @@ import {SwiperCardComponent} from '@components/cards/swiper-card/swiper-card.com
 import {CollectionPointsComponent} from '@pages/collection-points/collection-points.component';
 import {MapComponent} from '@components/map/map.component';
 import { InputWithIconComponent } from './components/ui/input-with-icon/input-with-icon.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { SelectComponent } from './components/ui/select/select.component';
 
 @NgModule({
   declarations: [
@@ -33,12 +35,14 @@ import { InputWithIconComponent } from './components/ui/input-with-icon/input-wi
     SwiperCardComponent,
     CollectionPointsComponent,
     MapComponent,
-    InputWithIconComponent
+    InputWithIconComponent,
+    SelectComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SwiperModule
+    SwiperModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

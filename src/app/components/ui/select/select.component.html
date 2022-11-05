@@ -1,1 +1,22 @@
-<p>select works!</p>
+<div class='dropdown'>
+  <button class='dropdown__button'
+          (click)='setShow()'>
+    {{selectedOption}}
+  </button>
+  <app-button-with-icon (submit)='setShow()'>
+    <app-svg-icon class='dropdown__icon'
+                  name='arrow-down'
+    ></app-svg-icon>
+  </app-button-with-icon>
+</div>
+
+<div class='options__wrapper'>
+  <div class='options'
+       *ngIf='show'>
+    <ul>
+      <li *ngFor='let item of optionsList'
+          (click)='onChange(item)'>{{item}}</li>
+    </ul>
+  </div>
+</div>
+

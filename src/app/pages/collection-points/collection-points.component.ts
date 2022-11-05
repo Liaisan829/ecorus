@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
   selector: 'app-collection-points',
@@ -6,11 +6,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   styleUrls: ['./collection-points.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CollectionPointsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class CollectionPointsComponent {
+  arrMaterials = ['Стекло', 'Бумага', 'Металл']
+  arrShops = ['H&M', 'P&B', 'Adidas']
 
 }
