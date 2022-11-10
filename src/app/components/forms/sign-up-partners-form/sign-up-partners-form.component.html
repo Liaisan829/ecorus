@@ -1,0 +1,37 @@
+<app-forms-header title="Вход"></app-forms-header>
+
+<form [formGroup]="partners_form"
+      class="form"
+>
+  <app-input
+    placeholder="Наименование организации"
+    formControlName="company"
+  ></app-input>
+
+  <app-input
+    type="email"
+    placeholder="Email"
+    formControlName="email"
+  ></app-input>
+
+  <app-input
+    type="password"
+    placeholder="Пароль"
+    formControlName="password"
+  ></app-input>
+
+  <app-button
+    [disabled]="!partners_form.valid"
+    [wide]="true"
+    (submit)="auth(partners_form)"
+    text="Войти"
+  ></app-button>
+</form>
+
+<section class="links">
+  <button
+    class="btn__link"
+    (click)="openSignInPartnersModal()"
+  >Я&nbsp;уже зарегистировался(-ась)
+  </button>
+</section>

@@ -1,0 +1,40 @@
+@import "mixins"
+
+\:host
+  display: block
+
+.form
+  display: flex
+  flex-direction: column
+  row-gap: 24px
+  margin-top: 48px
+
+  @include mobile
+    margin-top: 210px
+
+.phone
+  color: $c-green
+  @include text-14-20
+
+  &__info
+    @include text-14-20
+    color: $c-text-64
+
+
+.links
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-top: 16px
+
+.btn
+  &__link
+    color: $c-green
+    @include text-16-20
+
+  &__partners
+    margin-top: 32px
+    @include mobile
+      display: none
+
+

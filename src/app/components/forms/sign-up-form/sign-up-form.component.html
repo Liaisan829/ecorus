@@ -1,0 +1,46 @@
+<app-forms-header title="Регистрация"></app-forms-header>
+
+<form [formGroup]="sign_up_form"
+      class="form">
+
+  <app-input
+    placeholder="Телефон"
+    [hasMaskNumber]="true"
+    formControlName="phone_number"
+  ></app-input>
+
+  <app-input
+    placeholder="Пароль"
+    type="password"
+    formControlName="password"
+  ></app-input>
+  <app-button
+    [disabled]="!sign_up_form.valid"
+    [wide]="true"
+    (submit)="auth(sign_up_form)"
+    text="Зарегистрироваться"
+  ></app-button>
+</form>
+
+<section class="links">
+  <button
+    class="btn__link"
+    (click)="openSignInWithSmsModal()"
+  >Войти с&nbsp;помощью смс
+  </button>
+
+  <button
+    class="btn__link"
+    (click)="openAuthModal()"
+  >Войти
+  </button>
+</section>
+
+<div class="btn__partners">
+  <app-button
+    theme="GREY"
+    [wide]="true"
+    (submit)="openSignInPartners()"
+    text="Вход для партнёров"
+  ></app-button>
+</div>

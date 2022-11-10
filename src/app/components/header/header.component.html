@@ -37,19 +37,18 @@
         icon="location"
       ></app-button-with-icon>
 
-    <ng-container>
-      <app-button-with-icon
-        text="Войти"
-        icon="goIn"
-      ></app-button-with-icon>
-    </ng-container>
+      <ng-container>
+        <app-button-with-icon
+          text="Войти"
+          icon="goIn"
+          (submit)="openAuthDialog()"
+        ></app-button-with-icon>
+      </ng-container>
     </div>
 
     <button class='open__menu'
             (click)='openMenu()'>
       <app-svg-icon name='menu'></app-svg-icon>
     </button>
-
-
   </div>
 </header>
