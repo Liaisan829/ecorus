@@ -7,11 +7,13 @@ import {DomSanitizer} from "@angular/platform-browser";
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => InputComponent),
-    multi: true
-  }]
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => InputComponent),
+      multi: true
+    }
+  ]
 })
 export class InputComponent implements ControlValueAccessor {
   @Input() hasMaskNumber: boolean = false;
@@ -29,6 +31,7 @@ export class InputComponent implements ControlValueAccessor {
 
   onChangeCallback = (v: string) => {
   }
+
   onTouchedCallback = () => {
   }
 

@@ -1,9 +1,10 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup} from "@angular/forms";
 import {DialogService} from "@services/dialog.service";
 import {SignInWithSmsFormComponent} from "@components/forms/sign-in-with-sms-form/sign-in-with-sms-form.component";
 import {SignUpFormComponent} from '../sign-up-form/sign-up-form.component';
 import {SignInPartnersFormComponent} from "@components/forms/sign-in-partners-form/sign-in-partners-form.component";
+import {PasswordValidator, PhoneNumberValidator} from "@utils/validations.utils";
 
 @Component({
   selector: 'app-auth-form',
@@ -16,13 +17,14 @@ export class AuthFormComponent {
 
   constructor(private fb: FormBuilder, private dialogService: DialogService) {
     this.auth_form = this.fb.group({
-      phone_number: ['', Validators.required],
-      password: ['', Validators.required]
+      phone_number: ['', [...PhoneNumberValidator]],
+      password: ['', [...PasswordValidator]]
     })
   }
 
   auth(auth_form: FormGroup) {
-
+    this.dialogService.closeDialog()
+    console.log(auth_form.value)
   }
 
   openSignInWithSmsModal() {
@@ -35,5 +37,9 @@ export class AuthFormComponent {
 
   openSignInPartners() {
     this.dialogService.openDialog(SignInPartnersFormComponent)
+  }
+
+  hasError(formControlName: string, errorName: string) {
+    return (this.auth_form.get(formControlName)?.touched || this.auth_form.get(formControlName)?.dirty) && this.auth_form.get(formControlName)?.hasError(errorName)
   }
 }

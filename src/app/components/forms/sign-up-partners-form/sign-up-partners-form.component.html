@@ -7,18 +7,46 @@
     placeholder="Наименование организации"
     formControlName="company"
   ></app-input>
+  <ng-container *ngIf='hasError("company", "pattern")'>
+    <span class='form__error'>Название может сожержать латинские и русские буквы</span>
+  </ng-container>
+  <ng-container *ngIf='hasError("company", "required")'>
+    <span class='form__error'>Это поле обязательно</span>
+  </ng-container>
+  <ng-container *ngIf='hasError("company", "minlength")'>
+    <span class='form__error'>Минимальная длина названия 3 символа</span>
+  </ng-container>
 
   <app-input
     type="email"
     placeholder="Email"
     formControlName="email"
   ></app-input>
+  <ng-container *ngIf='hasError("email", "pattern")'>
+    <span class='form__error'>Неверный формат почты</span>
+  </ng-container>
+  <ng-container *ngIf='hasError("email", "required")'>
+    <span class='form__error'>Это поле обязательно</span>
+  </ng-container>
 
   <app-input
     type="password"
     placeholder="Пароль"
     formControlName="password"
   ></app-input>
+  <ng-container *ngIf='hasError("password", "pattern")'>
+				<span class='form__error'>Пароль должен сожержать латинские заглавные и строчные буквы, а также
+					цифру</span>
+  </ng-container>
+  <ng-container *ngIf='hasError("password", "required")'>
+    <span class='form__error'>Это поле обязательно</span>
+  </ng-container>
+  <ng-container *ngIf='hasError("password", "minlength")'>
+    <span class='form__error'>Минимальная длина пароля 8 символов</span>
+  </ng-container>
+  <ng-container *ngIf='hasError("password", "maxlength")'>
+    <span class='form__error'>Максимальная длина пароля 15 символов</span>
+  </ng-container>
 
   <app-button
     [disabled]="!partners_form.valid"

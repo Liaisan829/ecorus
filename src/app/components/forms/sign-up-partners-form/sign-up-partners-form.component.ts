@@ -1,7 +1,8 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup} from "@angular/forms";
 import {DialogService} from "@services/dialog.service";
 import {SignInPartnersFormComponent} from "@components/forms/sign-in-partners-form/sign-in-partners-form.component";
+import {CompanyNameValidator, EmailValidator, PasswordValidator} from "@utils/validations.utils";
 
 @Component({
   selector: 'app-sign-up-partners-form',
@@ -14,9 +15,9 @@ export class SignUpPartnersFormComponent {
 
   constructor(private fb: FormBuilder, private dialogService: DialogService) {
     this.partners_form = this.fb.group({
-      company: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+      company: ['', [...CompanyNameValidator]],
+      email: ['', [...EmailValidator]],
+      password: ['', [...PasswordValidator]]
     })
   }
 
@@ -26,5 +27,9 @@ export class SignUpPartnersFormComponent {
 
   openSignInPartnersModal(){
     this.dialogService.openDialog(SignInPartnersFormComponent)
+  }
+
+  hasError(formControlName: string, errorName: string) {
+    return (this.partners_form.get(formControlName)?.touched || this.partners_form.get(formControlName)?.dirty) && this.partners_form.get(formControlName)?.hasError(errorName)
   }
 }

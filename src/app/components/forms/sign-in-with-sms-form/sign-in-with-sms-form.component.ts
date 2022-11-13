@@ -1,8 +1,9 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup} from "@angular/forms";
 import {DialogService} from "@services/dialog.service";
 import {AuthFormComponent} from "@components/forms/auth-form/auth-form.component";
 import {SignInPartnersFormComponent} from "@components/forms/sign-in-partners-form/sign-in-partners-form.component";
+import {CodeValidator, PhoneNumberValidator} from "@utils/validations.utils";
 
 @Component({
   selector: 'app-sign-in-with-sms-form',
@@ -16,16 +17,15 @@ export class SignInWithSmsFormComponent {
 
   constructor(private fb: FormBuilder, private dialogService: DialogService) {
     this.sms_form = this.fb.group({
-      phone_number: ['', Validators.required],
-      code: ['', Validators.required]
+      phone_number: ['', [...PhoneNumberValidator]],
+      code: ['', [...CodeValidator]]
     })
   }
 
   auth(form: FormGroup) {
-    if(this.step === 1){
+    if (this.step === 1) {
       this.step++
-    }
-    else{
+    } else {
       //собираем данные и отправляем
     }
   }
@@ -36,5 +36,9 @@ export class SignInWithSmsFormComponent {
 
   openSignInPartners() {
     this.dialogService.openDialog(SignInPartnersFormComponent)
+  }
+
+  hasError(formControlName: string, errorName: string) {
+    return (this.sms_form.get(formControlName)?.touched || this.sms_form.get(formControlName)?.dirty) && this.sms_form.get(formControlName)?.hasError(errorName)
   }
 }

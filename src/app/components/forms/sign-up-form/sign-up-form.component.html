@@ -8,12 +8,31 @@
     [hasMaskNumber]="true"
     formControlName="phone_number"
   ></app-input>
+  <ng-container *ngIf='hasError("phone_number", "minlength")'>
+    <span class='form__error'>Неверный формат номера</span>
+  </ng-container>
+  <ng-container *ngIf='hasError("phone_number", "required")'>
+    <span class='form__error'>Это поле обязательно</span>
+  </ng-container>
 
   <app-input
     placeholder="Пароль"
     type="password"
     formControlName="password"
   ></app-input>
+  <ng-container *ngIf='hasError("password", "pattern")'>
+				<span class='form__error'>Пароль должен сожержать латинские заглавные и строчные буквы, а также
+					цифру</span>
+  </ng-container>
+  <ng-container *ngIf='hasError("password", "required")'>
+    <span class='form__error'>Это поле обязательно</span>
+  </ng-container>
+  <ng-container *ngIf='hasError("password", "minlength")'>
+    <span class='form__error'>Минимальная длина пароля 8 символов</span>
+  </ng-container>
+  <ng-container *ngIf='hasError("password", "maxlength")'>
+    <span class='form__error'>Максимальная длина пароля 15 символов</span>
+  </ng-container>
   <app-button
     [disabled]="!sign_up_form.valid"
     [wide]="true"

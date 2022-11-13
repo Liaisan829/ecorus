@@ -10,6 +10,12 @@
       placeholder="Телефон"
       formControlName="phone_number"
     ></app-input>
+    <ng-container *ngIf='hasError("phone_number", "minlength")'>
+      <span class='form__error'>Неверный формат номера</span>
+    </ng-container>
+    <ng-container *ngIf='hasError("phone_number", "required")'>
+      <span class='form__error'>Это поле обязательно</span>
+    </ng-container>
 
     <app-button
       [disabled]="!sms_form.controls['phone_number'].valid"
@@ -29,6 +35,12 @@
       placeholder="Код"
       formControlName="code"
     ></app-input>
+    <ng-container *ngIf='hasError("code", "pattern")'>
+      <span class='form__error'>Неверный код</span>
+    </ng-container>
+    <ng-container *ngIf='hasError("code", "required")'>
+      <span class='form__error'>Это поле обязательно</span>
+    </ng-container>
 
     <app-button
       [wide]="true"
