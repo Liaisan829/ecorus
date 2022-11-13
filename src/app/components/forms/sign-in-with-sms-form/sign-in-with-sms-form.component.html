@@ -1,0 +1,70 @@
+<app-forms-header title="Вход или регистрация"></app-forms-header>
+
+<form [formGroup]="sms_form"
+      class="form"
+>
+
+  <ng-container *ngIf="step===1">
+    <app-input
+      [hasMaskNumber]="true"
+      placeholder="Телефон"
+      formControlName="phone_number"
+    ></app-input>
+    <ng-container *ngIf='hasError("phone_number", "minlength")'>
+      <span class='form__error'>Неверный формат номера</span>
+    </ng-container>
+    <ng-container *ngIf='hasError("phone_number", "required")'>
+      <span class='form__error'>Это поле обязательно</span>
+    </ng-container>
+
+    <app-button
+      [disabled]="!sms_form.controls['phone_number'].valid"
+      [wide]="true"
+      (submit)="auth(sms_form)"
+      text="Получить код"
+    ></app-button>
+  </ng-container>
+
+  <ng-container *ngIf="step===2">
+    <div class="phone__info">
+      <p>Введите код отправленный вам на телефон</p>
+      <p class="phone">{{sms_form.controls['phone_number'].value}}</p>
+    </div>
+
+    <app-input
+      placeholder="Код"
+      formControlName="code"
+    ></app-input>
+    <ng-container *ngIf='hasError("code", "pattern")'>
+      <span class='form__error'>Неверный код</span>
+    </ng-container>
+    <ng-container *ngIf='hasError("code", "required")'>
+      <span class='form__error'>Это поле обязательно</span>
+    </ng-container>
+
+    <app-button
+      [wide]="true"
+      [disabled]="!sms_form.valid"
+      (submit)="auth(sms_form)"
+      text="Отправить"
+    ></app-button>
+  </ng-container>
+</form>
+
+<section class="links">
+  <button
+    class="btn__link"
+    (click)="openAuthModal()"
+  >Я&nbsp;уже зарегистировался(-ась)
+  </button>
+</section>
+
+<div class="btn__partners">
+  <app-button
+    theme="GREY"
+    [wide]="true"
+    (submit)="openSignInPartners()"
+    text="Вход для партнёров"
+  ></app-button>
+</div>
+

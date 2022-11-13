@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-button-with-icon',
@@ -11,4 +12,8 @@ export class ButtonWithIconComponent {
   @Input() icon!: string
   @Output() submit = new EventEmitter()
   @Input() theme: 'DEFAULT' | 'WHITE' | 'GREY' = 'DEFAULT'
+
+  constructor(private sanitizer: DomSanitizer) {
+    this.sanitizer.bypassSecurityTrustHtml(this.text)
+  }
 }

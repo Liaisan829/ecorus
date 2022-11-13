@@ -1,1 +1,17 @@
-<p>button works!</p>
+<button
+  [type]='type'
+  [style.color]='color'
+  class='btn'
+  [disabled]="disabled"
+  [class.btn__wide]='wide===true'
+  [class.btn__green]="theme === 'GREEN'"
+  [class.btn__grey]="theme === 'GREY'"
+  [class.btn__default]="theme === 'DEFAULT'"
+  [class.btn__eco]="theme === 'ECO'"
+  [class.btn__filter]="theme === 'FILTER'"
+  [class.btn__white]="theme === 'WHITE'"
+  (click)='submit.emit()'
+>
+  <ng-content></ng-content>
+  {{text}}
+</button>

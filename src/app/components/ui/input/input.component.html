@@ -1,0 +1,16 @@
+<input
+  *ngIf="hasMaskNumber"
+  [type]="type"
+  [placeholder]="placeholder"
+  [imask]="maskVal"
+  class="input"
+  (input)="onChange($event)"
+>
+
+<input
+  *ngIf="!hasMaskNumber"
+  [type]="type"
+  [placeholder]="placeholder"
+  class="input"
+  (input)="onChange($event)"
+>
