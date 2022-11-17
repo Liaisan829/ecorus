@@ -1,0 +1,36 @@
+<app-button-prev-page></app-button-prev-page>
+
+<div class='wrapper'>
+  <img class='img__wrapper'
+       src='/assets/img/collectionPointsFullCard.svg'
+       alt=''>
+
+  <div class='info__wrapper'>
+    <p class='info__address'>​Казань, Кремлёвская, 88</p>
+    <p class='info__phone'>+7 (917) 888 88&nbsp;88</p>
+    <div class='info__timetable'>
+      <div class='timetable__day'>
+        <p class='timetable__day__title'>Пн&nbsp;&mdash; Пт</p>
+        <p class='timetable__day__time'>08:00&nbsp;&mdash; 20:00</p>
+      </div>
+      <div class='timetable__day'>
+        <p class='timetable__day__title'>Сб&nbsp;&mdash; Вс</p>
+        <p class='timetable__day__time'>10:00&nbsp;&mdash; 18:00</p>
+      </div>
+    </div>
+
+    <div class='info__shops'>
+      <div class='shop'
+           *ngFor='let shop of shops'>
+        <h4 class='shop__title'>{{shop.title}}</h4>
+        <div class='material'>
+          <ng-container *ngFor='let material of shop.points'>
+            <div class='material__wrapper'>
+              <p>{{material.title}}: от {{material.count}}кг</p>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

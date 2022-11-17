@@ -1,0 +1,73 @@
+@import "mixins"
+
+\:host
+  display: block
+
+.wrapper
+  margin-top: 16px
+  border: 1px solid $c-blue-medium
+  border-radius: 16px
+  max-width: 384px
+  display: flex
+  flex-direction: column
+  overflow: hidden
+
+.info
+  &__wrapper
+    padding: 24px
+    background-color: white
+
+  &__address
+    color: $c-text-88
+    @include text-16-20
+    font-weight: 700
+
+  &__phone
+    color: $c-text-88
+    @include text-16-20
+    margin-top: 12px
+
+  &__timetable
+    margin-top: 24px
+    display: flex
+    flex-direction: column
+    row-gap: 4px
+
+  &__shops
+    display: flex
+    flex-direction: column
+    row-gap: 24px
+    margin-top: 24px
+
+.timetable
+  &__day
+    display: flex
+    flex-direction: row
+    column-gap: 12px
+    color: $c-text-88
+    @include text-16-20
+
+.shop__title
+  color: $c-text-88
+  @include text-16-20
+  font-weight: 500
+
+.material
+  margin-top: 8px
+  display: flex
+  flex-wrap: wrap
+  flex-direction: row
+  column-gap: 4px
+  row-gap: 8px
+
+  &__wrapper
+    background: $c-blue-light
+    border-radius: 20px
+    padding: 4px 12px
+
+    p
+      color: $c-text-72
+      font-weight: 500
+      @include text-12-16
+
+
