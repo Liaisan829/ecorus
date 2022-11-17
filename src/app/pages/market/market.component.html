@@ -1,0 +1,59 @@
+<app-baselayout>
+  <main>
+    <div class="top__wrapper">
+      <h1 class="top__title">ЭкоМаркет</h1>
+      <div class="filters__top">
+        <ng-container *ngFor="let filter of headersFilters">
+          <app-button
+            class="filters__btn"
+            [text]="filter"
+            theme="GREY"
+          >
+          </app-button>
+        </ng-container>
+      </div>
+
+      <app-button
+        class="filters__btn__mobile"
+        theme="GREY"
+        text="Фильтры"
+        [wide]="true"
+        (submit)="openBottomSheetFilters()"
+      ></app-button>
+    </div>
+
+    <div class="goods__wrapper">
+      <div class="filters__wrapper">
+        <div class="filters">
+          <app-checkbox-group
+            checkboxesGroupTitle="Пол"
+            [arrCheckboxesTitles]="genderFilters"
+          ></app-checkbox-group>
+
+          <app-checkbox-group
+            [hasSelectAll]="true"
+            checkboxesGroupTitle="Тип товара"
+            [arrCheckboxesTitles]="categoryFilters"
+          ></app-checkbox-group>
+
+          <app-checkbox-group
+            [hasSelectAll]="true"
+            checkboxesGroupTitle="Брэнд"
+            [arrCheckboxesTitles]="brandFilters"
+          ></app-checkbox-group>
+        </div>
+
+        <app-button
+          class="filters__btn__reset"
+          text="Сбросить фильтры"
+          [wide]="true"
+          theme="GREY"
+        ></app-button>
+      </div>
+
+      <div class="goods">
+
+      </div>
+    </div>
+  </main>
+</app-baselayout>
