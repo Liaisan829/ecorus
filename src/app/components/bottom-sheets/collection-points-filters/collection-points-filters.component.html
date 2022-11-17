@@ -1,0 +1,26 @@
+<app-bottom-sheet-wrapper>
+  <div class='wrapper'>
+    <div class='bottom__sheet__wrapper__filters'>
+      <div class='bottom__sheet__wrapper__filters__items'>
+        <div>
+          <h2>Материал</h2>
+          <app-checkbox-group [arrCheckboxesTitles]='arrMaterials'></app-checkbox-group>
+
+        </div>
+        <div>
+          <h2>Брэнд</h2>
+          <app-checkbox-group [arrCheckboxesTitles]='arrShops'></app-checkbox-group>
+        </div>
+      </div>
+      <div class='bottom__sheet__btns'>
+        <app-button text='Применить'
+                    [wide]='true'></app-button>
+        <app-button theme="GREY"
+                    text='Сбросить фильтры'
+                    [wide]='true'></app-button>
+      </div>
+
+    </div>
+
+  </div>
+</app-bottom-sheet-wrapper>

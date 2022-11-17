@@ -13,10 +13,9 @@
 .search
   display: flex
   flex-direction: row
+  justify-content: space-between
   column-gap: 20px
   width: 100%
-  @include tablet
-    column-gap: 16px
 
   &__input
     flex: 1
@@ -29,9 +28,32 @@
     @include tablet
       display: none
 
-.checkboxes
-  max-width: 280px
-  @include tablet
+.filter
+  flex-grow: 1
+  min-width: 280px
+
+  &__btn
+    &__wrapper
+      box-shadow: 0 2px 8px $c-blue-medium
+      padding: 12px
+      background-color: white
+      border-radius: 8px
+
+.collection__points--mobile
+  &__btn
+    position: fixed
+    bottom: 0
+    padding: 16px 0
+    width: 91vw
+    background-color: white
+    border-radius: 12px 12px 0 0
+    @include exclude-mobile
+      display: none
+
+.filter__btn__wrapper, .collection__points--mobile__btn
+  @include exclude-tablet
     display: none
 
-
+.cards
+  &__wrapper
+    margin-top: 32px

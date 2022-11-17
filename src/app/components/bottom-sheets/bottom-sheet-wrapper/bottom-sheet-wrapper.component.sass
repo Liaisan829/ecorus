@@ -1,0 +1,29 @@
+@import mixins
+
+\:host
+  display: block
+  position: absolute
+  padding: 12px 24px 24px 24px
+  background-color: $c-white
+  margin-top: 58px
+  border-radius: 20px 20px 0 0
+  bottom: 0
+  left: 0
+  width: 100%
+
+.bottom-sheet-wrapper
+  display: flex
+  flex-direction: column
+  row-gap: 24px
+
+.btn
+  &__wrapper
+    width: 100%
+    display: flex
+    justify-content: center
+
+  &__close
+    background: $c-blue-medium
+    border-radius: 4px
+    width: 32px
+    height: 3px

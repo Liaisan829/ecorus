@@ -1,0 +1,59 @@
+@import "mixins"
+
+\:host
+  display: block
+
+main
+  @include main_content
+  margin: 40px auto
+  @include mini-tablet
+    margin: 20px auto
+
+.top
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+    @include tablet
+      flex-direction: column
+      row-gap: 24px
+      align-items: flex-start
+
+  &__title
+    @include adaptive-font(48, 32)
+    font-weight: 600
+
+.filters
+  width: 282px
+  border-radius: 16px
+  border: 1px solid $c-blue-medium
+  padding: 24px
+  background-color: $c-white
+  display: flex
+  flex-direction: column
+  row-gap: 25px
+
+  &__wrapper
+    @include tablet
+      display: none
+
+  &__top
+    display: flex
+    column-gap: 12px
+    @include tablet
+      display: none
+
+  &__btn
+    border-radius: 61px
+
+    &__mobile
+      @include exclude-tablet
+        display: none
+
+    &__reset
+      margin-top: 23px
+
+.goods__wrapper
+  display: flex
+  margin-top: 40px
+  column-gap: 47px

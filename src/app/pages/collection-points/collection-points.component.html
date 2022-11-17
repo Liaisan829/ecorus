@@ -22,6 +22,22 @@
         itemName="материала"
         icon="arrow-down"
       ></app-select>
+
+      <button (click)='openBottomSheetFilters()'
+              class='filter__btn__wrapper'>
+        <app-svg-icon name='filter'></app-svg-icon>
+      </button>
     </div>
+
+    <section class='cards__wrapper'>
+      <div class='selected__portal__wrapper'>
+        <ng-template [cdkPortalOutlet]='selectedPortal'></ng-template>
+      </div>
+    </section>
+    <!--    есть вариант вытащить его за лэйаут и дать ширину 100%, но не знаю правильно ли...-->
+    <button class='collection__points--mobile__btn'
+            (click)='openBottomSheetListCollectionPoint()'>Показать пункты сбора
+    </button>
+
   </main>
 </app-baselayout>

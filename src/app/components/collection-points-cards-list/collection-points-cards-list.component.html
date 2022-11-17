@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <ng-container *ngFor="let item of collectionPoints">
+    <a (click)="addToQueryParams()">
+      <app-collection-points-card
+        [img]="item.img"
+        [address]="item.address"
+        [materials]="item.materials"
+      ></app-collection-points-card>
+    </a>
+  </ng-container>
+</div>
