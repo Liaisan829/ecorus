@@ -51,7 +51,23 @@
         ></app-button>
       </div>
 
-      <div class="goods">
+      <div class="products">
+        <ng-container *ngFor="let product of productsArray">
+          <button class="card" [@cardFlip]="product.state" (click)="cardClicked(product)">
+            <div class="card__face front">
+              <app-product-card
+                [title]="product.data.title"
+                [brand]="product.data.brand"
+                [category]="product.data.category"
+                [cost]="product.data.cost"
+                [posterImg]="product.data.posterImg"
+              ></app-product-card>
+            </div>
+            <div class="face back">
+              здесь будет карточка баланса юзера
+            </div>
+          </button>
+        </ng-container>
 
       </div>
     </div>

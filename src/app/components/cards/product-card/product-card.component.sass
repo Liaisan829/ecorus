@@ -1,0 +1,61 @@
+@import "mixins"
+
+\:host
+  display: block
+
+.card
+  &__wrapper
+    margin-top: -30px
+    max-width: 274px
+    min-width: 200px
+    width: 17vw
+    border-radius: 16px
+    background-color: transparent
+    display: flex
+    flex-direction: column
+
+  &__title
+    @include text-16-20
+    color: $c-text-88
+    margin-top: 16px
+
+  &__category
+    @include text-16-20
+    color: $c-text-88
+    margin-top: 5px
+
+  &__cost
+    @include text-14-20
+    font-weight: 600
+    color: black
+
+    &__wrapper
+      display: flex
+      align-items: center
+      margin-top: 16px
+      column-gap: 8px
+
+  &__brand
+    @include text-14-20
+    color: $c-text-72
+    height: 30px
+    padding: 6px 10px
+    background: white
+    box-shadow: 0 4px 24px rgba(#3333331E, 0.12)
+    border-radius: 10px
+    display: inline-block
+
+    &__wrapper
+      position: relative
+      top: 54px
+      height: 30px
+      left: 24px
+
+@media only screen and (max-width: 550px)
+  .card__wrapper
+    width: 90vw
+    max-width: 343px
+
+@media only screen and (max-width: 560px)
+  .card__wrapper
+    width: 100%

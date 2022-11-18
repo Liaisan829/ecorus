@@ -47,6 +47,7 @@ main
     border-radius: 61px
 
     &__mobile
+      width: 100%
       @include exclude-tablet
         display: none
 
@@ -57,3 +58,47 @@ main
   display: flex
   margin-top: 40px
   column-gap: 47px
+
+.products
+  display: flex
+  justify-content: start
+  column-gap: 24px
+  row-gap: 48px
+  flex-wrap: wrap
+
+  @include mobile
+    justify-content: center
+
+@media only screen and (min-width: 566px)
+  .card
+    width: 17vw
+    max-width: 274px
+
+.card
+  border-radius: 16px
+  cursor: pointer
+  position: relative
+  transform-style: preserve-3d
+  -webkit-transform-style: preserve-3d
+  -moz-backface-visibility: hidden
+  min-width: 200px
+  height: 371px
+  text-align: start
+
+  &__face
+    display: block
+    position: absolute
+    width: 100%
+    height: 100%
+    border-radius: inherit
+    backface-visibility: hidden
+    object-fit: cover
+
+.back
+  transform: rotateY(180deg)
+  backface-visibility: hidden
+  height: 100%
+  width: 100%
+  padding: 24px
+  box-shadow: 0 12px 32px $c-blue-dark, 0 4px 24px $c-blue-medium
+  border-radius: 16px

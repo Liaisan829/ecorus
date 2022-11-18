@@ -32,14 +32,15 @@ import {SignInWithSmsFormComponent} from '@components/forms/sign-in-with-sms-for
 import {SignUpFormComponent} from '@components/forms/sign-up-form/sign-up-form.component';
 import {SignUpPartnersFormComponent} from '@components/forms/sign-up-partners-form/sign-up-partners-form.component';
 import {SignInPartnersFormComponent} from '@components/forms/sign-in-partners-form/sign-in-partners-form.component';
-import { BottomSheetContainerComponent } from './components/bottom-sheet-container/bottom-sheet-container.component';
-import { CollectionPointsFiltersComponent } from './components/bottom-sheets/collection-points-filters/collection-points-filters.component';
-import { BottomSheetWrapperComponent } from './components/bottom-sheets/bottom-sheet-wrapper/bottom-sheet-wrapper.component';
-import { CollectionPointsCardComponent } from './components/cards/collection-points-card/collection-points-card.component';
-import { CollectionPointsCardsListComponent } from './components/collection-points-cards-list/collection-points-cards-list.component';
-import { CollectionPointsFullCardComponent } from './components/cards/collection-points-full-card/collection-points-full-card.component';
-import { ButtonPrevPageComponent } from './components/ui/button-prev-page/button-prev-page.component';
-import { MarketComponent } from './pages/market/market.component';
+import { BottomSheetContainerComponent } from '@components/bottom-sheet-container/bottom-sheet-container.component';
+import { CollectionPointsFiltersComponent } from '@components/bottom-sheets/collection-points-filters/collection-points-filters.component';
+import { BottomSheetWrapperComponent } from '@components/bottom-sheets/bottom-sheet-wrapper/bottom-sheet-wrapper.component';
+import { CollectionPointsCardComponent } from '@components/cards/collection-points-card/collection-points-card.component';
+import { CollectionPointsCardsListComponent } from '@components/collection-points-cards-list/collection-points-cards-list.component';
+import { CollectionPointsFullCardComponent } from '@components/cards/collection-points-full-card/collection-points-full-card.component';
+import { ButtonPrevPageComponent } from '@components/ui/button-prev-page/button-prev-page.component';
+import { MarketComponent } from '@pages/market/market.component';
+import { ProductCardComponent } from '@components/cards/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { MarketComponent } from './pages/market/market.component';
     CollectionPointsCardsListComponent,
     CollectionPointsFullCardComponent,
     ButtonPrevPageComponent,
-    MarketComponent
+    MarketComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
