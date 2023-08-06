@@ -1,0 +1,70 @@
+<header>
+	<div class="header__container">
+		<div class="header__navigation">
+			<a routerLink="/">
+				<img src="/src/assets/svg/logo.svg" alt="logo">
+			</a>
+			<nav class="navigation">
+				<a
+					routerLink="/"
+					routerLinkActive="header__link__active"
+					[routerLinkActiveOptions]="{exact: true}"
+					class="header__link"
+				>Главная</a>
+
+				<a
+					routerLink="/collection-points"
+					routerLinkActive="header__link__active"
+					class="header__link"
+				>Пункты сбора</a>
+
+				<a
+					routerLink="/ecomarket"
+					routerLinkActive="header__link__active"
+					class="header__link"
+				>ЭкоМаркет</a>
+
+				<a
+					routerLink="/about-service"
+					routerLinkActive="header__link__active"
+					class="header__link"
+				>О сервисе</a>
+			</nav>
+		</div>
+		<div class="header__auth">
+			<ng-container *ngIf="!userAuth">
+				<app-button-with-icon
+					text="Казань"
+					icon="location"
+				></app-button-with-icon>
+
+				<app-button-with-icon
+					text="Войти"
+					icon="goIn"
+					(submit)="openAuthDialog()"
+				></app-button-with-icon>
+			</ng-container>
+
+			<ng-container *ngIf="userAuth">
+				<button class='btn'>
+					<img src='/assets/img/currency.svg'
+						 alt='валюта'>
+					<p>1000</p>
+				</button>
+
+				<a routerLink='/profile'>
+					<button class='btn'>
+						<img src='/src/assets/img/miniAvatar.svg'
+							 alt='валюта'>
+						<p>Алексей</p>
+					</button>
+				</a>
+			</ng-container>
+		</div>
+
+		<button class='open__menu'
+				(click)='openMenu()'>
+			<app-svg-icon name='menu'></app-svg-icon>
+		</button>
+	</div>
+</header>

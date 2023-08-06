@@ -1,0 +1,50 @@
+<div>
+  <div>
+    <button (click)='closeModal()'
+            class='btn__close'>
+      <app-svg-icon name='close'
+                size='32px'></app-svg-icon>
+    </button>
+
+    <a *ngIf='userAuth' routerLink='profile' class='user__info__wrapper'>
+      <img src='/assets/img/profileAvatar.svg' alt='avatar'>
+      <div class='user__info'>
+        <p class='user__info__name'>Алексей Петрович</p>
+        <div class='user__info__balance'>
+          <img src='/assets/img/currency.svg'
+               alt=''>
+          <p>1000</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class='links'>
+    <a routerLink=''
+       class='link'
+       [routerLinkActiveOptions]='{exact:true}'
+       routerLinkActive='link--active'>Главная</a>
+    <a routerLink='collection-points'
+       class='link'
+       routerLinkActive='link--active'>Пункты сбора</a>
+    <a routerLink='market'
+       class='link'
+       routerLinkActive='link--active'>ЭкоМаркет</a>
+    <a routerLink='about-service'
+       class='link'
+       routerLinkActive='link--active'>О&nbsp;сервисе</a>
+  </div>
+
+  <div class='btns__auth'>
+    <ng-container *ngIf='!(userAuth)'>
+      <app-button-with-icon
+        text='Казань'
+        icon='Geo'>
+      </app-button-with-icon>
+      <app-button-with-icon
+        (click)='openModal()'
+        [text]="'Войти'"
+        [icon]="'Login'">
+      </app-button-with-icon>
+    </ng-container>
+  </div>
+</div>

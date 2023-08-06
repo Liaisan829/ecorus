@@ -1,0 +1,44 @@
+@import "mixins.sass"
+
+\:host
+  display: block
+
+.btn__close
+  right: 0
+  float: right
+
+.links
+  display: flex
+  flex-direction: column
+  row-gap: 32px
+  padding-top: 53px
+
+.user__info
+  &__wrapper
+    @include tablet
+      display: flex
+      flex-direction: row
+      column-gap: 12px
+
+  &__name
+    @include tablet
+      @include text-16-24
+
+  &__balance
+    @include tablet
+      display: flex
+      flex-direction: row
+      align-items: center
+      column-gap: 4px
+
+.btns__auth
+  @include tablet
+    display: flex
+    flex-direction: column
+    row-gap: 12px
+    margin-top: 12px
+  @include mobile
+    position: absolute
+    bottom: 32px
+
+

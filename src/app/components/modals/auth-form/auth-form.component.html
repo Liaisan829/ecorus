@@ -1,0 +1,68 @@
+<app-dialog>
+	<app-forms-header title="Вход"></app-forms-header>
+
+	<form class="form" [formGroup]="auth_form">
+		<app-input
+			placeholder="Телефон"
+			[hasMaskNumber]="true"
+			formControlName="phone_number"
+		></app-input>
+		<ng-container *ngIf='hasError("phone_number", "minlength")'>
+			<span class='form__error'>Неверный формат номера</span>
+		</ng-container>
+		<ng-container *ngIf='hasError("phone_number", "required")'>
+			<span class='form__error'>Это поле обязательно</span>
+		</ng-container>
+
+		<app-input
+			placeholder="Пароль"
+			type="password"
+			formControlName="password"
+		></app-input>
+		<ng-container *ngIf='hasError("password", "pattern")'>
+				<span class='form__error'>Пароль должен сожержать латинские заглавные и строчные буквы, а также
+					цифру</span>
+		</ng-container>
+		<ng-container *ngIf='hasError("password", "required")'>
+			<span class='form__error'>Это поле обязательно</span>
+		</ng-container>
+		<ng-container *ngIf='hasError("password", "minlength")'>
+			<span class='form__error'>Минимальная длина пароля 8 символов</span>
+		</ng-container>
+		<ng-container *ngIf='hasError("password", "maxlength")'>
+			<span class='form__error'>Максимальная длина пароля 15 символов</span>
+		</ng-container>
+
+		<app-button
+			[disabled]="!auth_form.valid"
+			[wide]="true"
+			(submit)="auth(auth_form)"
+			text="Войти"
+		></app-button>
+
+		<button (click)="reset()">reset</button>
+	</form>
+
+	<section class="links">
+		<button
+			class="btn__link"
+			(click)="openSignInWithSmsModal()"
+		>Войти с&nbsp;помощью смс
+		</button>
+
+		<button
+			class="btn__link"
+			(click)="openSignUpModal()"
+		>Регистрация
+		</button>
+	</section>
+
+	<div class="btn__partners">
+		<app-button
+			theme="GREY"
+			[wide]="true"
+			(submit)="openSignInPartners()"
+			text="Вход для партнёров"
+		></app-button>
+	</div>
+</app-dialog>

@@ -1,0 +1,39 @@
+<app-bottom-sheet-wrapper>
+  <div class="bottom__sheet__wrapper">
+    <div class='filters__header--mobile'>
+      <ng-container *ngFor='let filter of headersFilters; let i = index'>
+        <app-button
+          class='filters__btn'
+          theme="GREY"
+          [text]='filter'></app-button>
+      </ng-container>
+    </div>
+    <div class='filters__categories'>
+      <app-checkbox-group
+        checkboxesGroupTitle='Пол'
+        [arrCheckboxesTitles]='genderFilters'>
+      </app-checkbox-group>
+      <app-checkbox-group
+        checkboxesGroupTitle='Тип товара'
+        [hasSelectAll]='true'
+        [arrCheckboxesTitles]='categoryFilters'>
+      </app-checkbox-group>
+      <app-checkbox-group
+        checkboxesGroupTitle='Брэнд'
+        [hasSelectAll]='true'
+        [arrCheckboxesTitles]='brandFilters'>
+      </app-checkbox-group>
+    </div>
+    <div class='bottom__sheet__wrapper__btns'>
+      <app-button text='Применить'
+                  [wide]='true'
+                  (submit)="closeBottomSheet()"
+      ></app-button>
+      <app-button text='Сбросить фильтры'
+                  theme="GREY"
+                  [wide]='true'
+                  (submit)="closeBottomSheet()"
+      ></app-button>
+    </div>
+  </div>
+</app-bottom-sheet-wrapper>
